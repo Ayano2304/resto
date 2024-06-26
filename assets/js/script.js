@@ -1,11 +1,16 @@
+const navbar = document.querySelector(".navbar");
 document.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
     // Adjust the value as needed
-      navbar.classList.add("scrolled");
+    navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
+});
+
+const menuBar = document.querySelector(".hamburger-menu");
+menuBar.addEventListener("click", () => {
+  navbar.classList.toggle("hamburger-open");
 });
 
 document.getElementById("order").addEventListener("submit", function (event) {
@@ -17,14 +22,14 @@ document.getElementById("order").addEventListener("submit", function (event) {
   const waktu = document.getElementById("waktu").value;
   const jumlah_orang = document.getElementById("person").value;
 
-let text = `Permisi Kak Saya Ingin Melakukan Reservasi 
+  let text = `Permisi Kak Saya Ingin Melakukan Reservasi 
 Nama : ${nama}
 Tanggal : ${tanggal}
 Waktu : ${waktu}
 Jumlah : ${jumlah_orang}
 
 Apakah Bisa ?`;
-  
+
   const TeksEncode = encodeURI(text);
 
   // Bangun URL WhatsApp dengan pesan yang dikodekan
@@ -34,8 +39,15 @@ Apakah Bisa ?`;
   window.open(whatsappURL, "_blank");
 });
 
-
-
-
-
-
+const listMenu = document.querySelector(".list_menu");
+const show_btn = document.querySelector(".button_list");
+show_btn.addEventListener("click", function () {
+  // Cek kondisi display dari list_menu dan toggling
+  if (listMenu.style.display === "none" || listMenu.style.display === "") {
+    listMenu.style.display = "block";
+    show_btn.textContent = "Sembunyikan Menu";
+  } else {
+    listMenu.style.display = "none";
+    show_btn.textContent = "Lihat Menu Selengkapnya";
+  }
+});
