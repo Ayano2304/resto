@@ -51,3 +51,20 @@ show_btn.addEventListener("click", function () {
     show_btn.textContent = "Lihat Menu Selengkapnya";
   }
 });
+
+function closeNavbar() {
+  let navbarToggler = document.querySelector(".navbar-toggler");
+  let navbarCollapse = document.getElementById("navbarSupportedContent");
+
+  if (navbarCollapse.classList.contains("show")) {
+    navbarToggler.click();
+  }
+}
+
+// Ambil semua elemen dengan kelas 'nav-link'
+const navLinks = document.querySelectorAll(".nav-link");
+
+// Tambahkan event listener ke setiap nav-link
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", closeNavbar);
+});

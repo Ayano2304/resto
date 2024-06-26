@@ -107,6 +107,7 @@ section{
 section.about{
     background-color: #161718;
     padding-top: 10rem;
+    overflow: hidden;
 }
 
 section.menu{
@@ -307,6 +308,11 @@ select#person,select#waktu{
 
     .kotak-menu .kanan{
         padding-left: 1em;
+        width: 100%;
+    }
+
+    .kotak-menu .kiri{
+        padding-right: 1rem;
     }
 
     section.about,section.menu{
