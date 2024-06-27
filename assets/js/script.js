@@ -22,6 +22,18 @@ document.getElementById("order").addEventListener("submit", function (event) {
   const waktu = document.getElementById("waktu").value;
   const jumlah_orang = document.getElementById("person").value;
 
+if (nama === "" || tanggal === "" || waktu === "" || jumlah_orang === "") {
+  Swal.fire({
+    title: "Reservasi Gagal!",
+    text: "Tolong Isi Data Secara Lengkap.",
+    icon: "error",
+    confirmButtonText: "OK",
+  });
+  return;
+}
+
+  
+
   let text = `Permisi Kak Saya Ingin Melakukan Reservasi 
 Nama : ${nama}
 Tanggal : ${tanggal}
@@ -33,10 +45,18 @@ Apakah Bisa ?`;
   const TeksEncode = encodeURI(text);
 
   // Bangun URL WhatsApp dengan pesan yang dikodekan
-  const whatsappURL = `https://wa.me/6289605360021?text=${TeksEncode}`;
-
-  // Buka URL di tab atau jendela baru
-  window.open(whatsappURL, "_blank");
+  const whatsappURL = `https://wa.me/6285782342451?text=${TeksEncode}`;
+  Swal.fire({
+    title: "Reservasi Berhasil!",
+    text: "Data Anda berhasil diisi. Klik OK untuk melanjutkan ke WhatsApp.",
+    icon: "success",
+    confirmButtonText: "OK",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Buka URL di tab atau jendela baru setelah user mengklik OK
+      window.open(whatsappURL, "_blank");
+    }
+  });
 });
 
 const listMenu = document.querySelector(".list_menu");
@@ -68,3 +88,24 @@ const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach((navLink) => {
   navLink.addEventListener("click", closeNavbar);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector("nav");
+
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  }
+
+  // Periksa posisi scroll ketika halaman dimuat
+  handleScroll();
+
+  // Periksa posisi scroll setiap kali terjadi scrolling
+  window.addEventListener("scroll", handleScroll);
+});
+
+
+        

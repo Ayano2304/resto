@@ -26,6 +26,16 @@ nav a.brand{
 
 nav a.brand span{
     color: #B01403;
+    padding-left: 10px;
+}
+
+nav a.brand{
+    display: flex;
+    align-items: center;
+}
+
+nav a.brand:hover{
+    color: white;
 }
 
 nav .hamburger-menu{
@@ -142,8 +152,8 @@ footer{
         }
 
 .menu-image{
-    width: 100px;
-    height:100px ;
+    /* width: 200px; */
+    height:150px ;
 }
 
 .menu-image img {
@@ -258,28 +268,6 @@ select#person,select#waktu{
     --swiper-theme-color:crimson !important;
 }
 
-/* .kotak-menu{
-    width: 45%;
-    height: 150px;
-    display: flex;
-}
-
-.kotak-menu .kiri{
-    width: 150px;
-    height: 150px;
-}
-
-.kotak-menu .kanan{
-    color: white;
-}
-
-.kotak-menu .kiri img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-} */
-
 .kotak-menu {
   width: 45%;
   height: 150px;
@@ -349,4 +337,19 @@ select#person,select#waktu{
     section.about,section.menu{
         padding-top: 6rem;
     }
+
+    select#person,select#waktu{
+        padding-left: 1em;
+}
+
+    /* input#hari,input#waktu{
+    padding-left: 0;
+} */
+
+input#hari{
+    width: 8rem;
+    /* background-color: #ff0000; */
+    padding-inline: 0;
+    padding-left: 1em;
+}
 }
