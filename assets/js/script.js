@@ -1,16 +1,30 @@
 const navbar = document.querySelector(".navbar");
 document.addEventListener("scroll", function () {
   if (window.scrollY > 50) {
-    // Adjust the value as needed
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
 });
 
-const menuBar = document.querySelector(".hamburger-menu");
-menuBar.addEventListener("click", () => {
-  navbar.classList.toggle("hamburger-open");
+const navbarToggler = document.getElementById("navbarToggler");
+const navbarMenu = document.getElementById("navbarMenu");
+
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    navLinks.forEach((nav) => {
+      nav.classList.remove("active");
+    });
+
+    // Add active class to the clicked link
+    e.target.classList.add("active");
+
+    // Tutup navbar saat link diklik pada ukuran layar kecil
+    if (window.innerWidth <= 768) {
+      $(".navbar-collapse").collapse("hide");
+    }
+  });
 });
 
 document.getElementById("order").addEventListener("submit", function (event) {
@@ -22,17 +36,15 @@ document.getElementById("order").addEventListener("submit", function (event) {
   const waktu = document.getElementById("waktu").value;
   const jumlah_orang = document.getElementById("person").value;
 
-if (nama === "" || tanggal === "" || waktu === "" || jumlah_orang === "") {
-  Swal.fire({
-    title: "Reservasi Gagal!",
-    text: "Tolong Isi Data Secara Lengkap.",
-    icon: "error",
-    confirmButtonText: "OK",
-  });
-  return;
-}
-
-  
+  if (nama === "" || tanggal === "" || waktu === "" || jumlah_orang === "") {
+    Swal.fire({
+      title: "Reservasi Gagal!",
+      text: "Tolong Isi Data Secara Lengkap.",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
 
   let text = `Permisi Kak Saya Ingin Melakukan Reservasi 
 Nama : ${nama}
@@ -81,14 +93,6 @@ function closeNavbar() {
   }
 }
 
-// Ambil semua elemen dengan kelas 'nav-link'
-const navLinks = document.querySelectorAll(".nav-link");
-
-// Tambahkan event listener ke setiap nav-link
-navLinks.forEach((navLink) => {
-  navLink.addEventListener("click", closeNavbar);
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav");
 
@@ -106,6 +110,3 @@ document.addEventListener("DOMContentLoaded", function () {
   // Periksa posisi scroll setiap kali terjadi scrolling
   window.addEventListener("scroll", handleScroll);
 });
-
-
-        

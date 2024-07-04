@@ -10,7 +10,6 @@ root{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        /* overflow-x:hidden; */
 }
         
 body{
@@ -42,14 +41,19 @@ nav .hamburger-menu{
     background-color: #fff;
 }
 
-.nav-link{
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
+.nav-link.active {
+    color: crimson !important;
 }
 
-.nav-link:hover{
-    color: #B01403;
+.nav-link {
+    color: white !important;
+    transition: color 0.3s;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: crimson !important;
 }
 
 .scrolled{
@@ -57,18 +61,14 @@ nav .hamburger-menu{
     border-bottom: 2px solid crimson;
 }
 
-.hamburger-open {
-    background-color: #161718;
-}
-
-section{
-    padding-top: 4rem;
-}
+.navbar.hamburger-open {
+            background-color: black !important;
+        }
 
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh; /* Menyesuaikan tinggi gambar agar memenuhi tinggi viewport */
+    height: 100vh; 
     overflow: hidden;
 }
 
@@ -89,7 +89,7 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan */
+    background-color: rgba(0, 0, 0, 0.8); 
     z-index: 2;
 }
 
@@ -106,12 +106,13 @@ section{
 
 .hero-text h3 {
     margin: 0;
-    font-size: 36px;
+    font-size: 4rem;
+    font-weight: 600;
 }
 
 .hero-text p {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 1.5rem;
 }
 
 section.about{
@@ -141,14 +142,26 @@ section.about .about-img img{
 
 
 footer{
-    background-color: #161718;
+    background-color: #0E0D0C;
+}
+
+.icon-sosmed{
+    width: 75px; 
+    height: 75px; 
+    background-color: crimson; 
+    border-radius: 100%
+}
+
+.icon-sosmed svg{
+    width: 45px;
+    height: 45px;
 }
 
 .divider {
             width: 50%;
-            height: 2px; /* Ketebalan garis */
-            background-color: #ff0000; /* Warna garis */
-            margin: 20px 0; /* Jarak atas dan bawah garis */
+            height: 2px; 
+            background-color: #ff0000; 
+            margin: 20px 0; 
         }
 
 .menu-image{
@@ -211,6 +224,12 @@ footer{
 .watermark p{
     color: white;
     padding-top: 10px;
+}
+
+section.reservasi{
+    background-color: #161718;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
 .reservasi-form{
@@ -281,15 +300,14 @@ select#person,select#waktu{
 }
 
 .kotak-menu .kiri {
-  width: 100%; /* Isi penuh kolom kiri */
-  height: 150px; /* Tinggi tetap untuk gambar */
+  width: 100%; 
+  height: 150px; 
 }
 
 .kotak-menu .kanan {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding-left: 15px; */
   color: white;
 }
 
@@ -300,14 +318,53 @@ select#person,select#waktu{
   object-position: center;
 }
 
+.typewriter{
+    margin: auto;
+    width: 600px;
+}
+
+.typewriter h3 {
+    	
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  overflow: hidden; 
+  border-right: .15em solid #B01403; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    color: #B01403;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #B01403; }
+}
+
 @media (max-width: 768px) {
+
+    .hero-text h3{
+        font-size: 36px;
+    }
+
+    .hero-text p{
+        font-size: 18px;
+    }
+
     section.about p,section.about h2{
         text-align: center;
     }
 
     footer.sosmed svg{
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
     }
 
     section.hero .hero-text{
@@ -315,6 +372,8 @@ select#person,select#waktu{
         flex-direction: column;
         width: 100%;
     }
+
+    
 
     .swiper{
         width: 400px;
@@ -334,22 +393,36 @@ select#person,select#waktu{
         padding-right: 1rem;
     }
 
-    section.about,section.menu{
-        padding-top: 6rem;
+    section.about,section#menu{
+        padding-top: 8rem;
+        padding-bottom: 8rem;
     }
 
     select#person,select#waktu{
         padding-left: 1em;
 }
-
-    /* input#hari,input#waktu{
-    padding-left: 0;
-} */
+    .typewriter{
+        width: 320px;
+    }
 
 input#hari{
     width: 8rem;
-    /* background-color: #ff0000; */
     padding-inline: 0;
     padding-left: 1em;
+}
+
+nav{
+    background-color: #161718;
+    border-bottom: 2px solid crimson;
+}
+
+.icon-sosmed{
+    width: 60px;
+    height: 60px;
+}
+
+.icon-sosmed svg{
+    width: 40px;
+    height: 40px;
 }
 }

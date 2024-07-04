@@ -22,7 +22,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 nav_links gap-3">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Beranda</a>
+                <a class="nav-link active" aria-current="page" href="#">Beranda</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">Tentang</a>
@@ -38,17 +38,22 @@
         </div>
       </nav>
 
-      <section data-aos="zoom-in" data-aos-duration="500" class="hero">
+      <section class="hero">
         <div class="hero-image">
           <img src="https://www.thetranshotel.com/images/fiSD8atN5f_sundanese_food.jpg" alt="" />
         </div>
         <div class="hero-text text-white">
-          <h3>Selamat Datang</h3>
-          <p>Nikmati kelezatan internasional dengan sentuhan lokal di setiap hidangan kami, untuk pengalaman makan yang tak terlupakan.</p>
+          <div class="typewriter" data-aos="zoom-in-up" data-aos-delay="150" data-aos-duration="500">
+            <h3>Selamat Datang</h3>
+          </div>
+          <!-- <h3>Selamat Datang</h3> -->
+          <p data-aos="fade-up" data-aos-delay="1100"><q>
+            Nikmati kelezatan internasional dengan sentuhan <span class="text-danger fw-bold text-uppercase">lokal</span> di setiap hidangan kami, untuk pengalaman makan yang <br><span class="text-danger fw-bold text-uppercase">tak terlupakan</span>
+          </q></p>
         </div>
       </section>
 
-      <section id="about" class="about pb-5">
+      <section id="about" class="about ">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6" data-aos="fade-right">
@@ -65,13 +70,13 @@
               </div>
             </div>
             <div class="col-md-6" data-aos="fade-left">
-              <img src="assets/img/bg.jpeg" alt="" style="width: 100%; object-fit: center" />
+              <img src="assets/img/bg.jpeg" alt="" style="width: 100%; object-fit: center" class="rounded"/>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="menu pt-5 pb-5">
+      <section class="menu pt-5 " id="menu">
         <div class="container">
           <h2 data-aos="fade-down" class="text-white text-center">Menu <span class="text-danger">Utama </span>Kami</h2>
           <div class="row pt-5" data-aos="fade-up" data-aos-delay="300">
@@ -111,7 +116,7 @@
                       <p class="text-white">Bebek bakar lezat dengan bumbu kecap manis, cita rasa otentik.</p>
                     </div>
                     <div class="harga-makanan">
-                      <p class="text-white">RP 75.000</p>
+                      <p class="text-white">RP 20.000</p>
                     </div>
                   </div>
                 </div>
@@ -440,7 +445,7 @@
         </div>
       </section>
 
-      <section id="order" data-aos="fade-up" data-aos-duration="1000" class="reservasi py-5">
+      <section id="order" data-aos="fade-up" data-aos-duration="1000" class="reservasi ">
         <div class="container">
           <h2 class="text-white text-center">Reservasi Online</h2>
           <p class="text-white text-center">Silahkan Isi Sesuai Dengan Ketentuan</p>
@@ -505,18 +510,18 @@
                   />
                 </svg>
               </div> -->
-              <div class="icon-sosmed d-flex align-items-center justify-content-center" style="width: 75px; height: 75px; background-color: crimson; border-radius: 100%">
+              <div class="icon-sosmed d-flex align-items-center justify-content-center" >
                 <a target="_blank" href="https://wa.me/6285782342451">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg"  fill="white" class="bi bi-whatsapp" viewBox="0 0 16 16">
                     <path
                       d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
                     />
                   </svg>
                 </a>
               </div>
-              <div class="icon-sosmed d-flex align-items-center justify-content-center" style="width: 75px; height: 75px; background-color: crimson; border-radius: 100%">
+              <div class="icon-sosmed d-flex align-items-center justify-content-center">
                 <a target="_blank" href="https://facebook.com/profile.php?id=61560312287167">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg"  fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
                     <path
                       d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
                     />
@@ -599,6 +604,7 @@
     <script>
       AOS.init();
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
   </body>
 </html>
