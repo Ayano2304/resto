@@ -110,3 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Periksa posisi scroll setiap kali terjadi scrolling
   window.addEventListener("scroll", handleScroll);
 });
+
+const counters = document.querySelectorAll(".counters span");
+const container = document.querySelector(".counters");
+
+let count = 0;
+
+function updateCount() {
+  const target = parseInt(counter.dataset.count);
+}
